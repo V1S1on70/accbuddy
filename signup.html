@@ -330,7 +330,56 @@
                 </div>
             </div>
 
-            <!-- js code start here -->
+            <script>
+                // Function to show and hide the mobile menu
+function toggleMobileMenu() {
+  var mobileMenu = document.querySelector('.ab-mobile-slide-nav');
+  if (mobileMenu) {
+    mobileMenu.classList.toggle('show');
+  } else {
+    console.error('An element with a class "ab-mobile-slide-nav" не знайдено.');
+  }
+}
+
+// Get all elements with class "ab-trigger-button"
+var triggerButtons = document.querySelectorAll('.ab-trigger-button');
+
+// Adding a "click" event to each "ab-trigger-button"
+triggerButtons.forEach(function(button) {
+  button.addEventListener('click', function() {
+    toggleMobileMenu();
+  });
+});
+
+// Function to show and hide passwords
+function togglePasswordVisibility() {
+  var passwordInputs = document.querySelectorAll('input[type="password"]');
+  if (passwordInputs.length > 0) {
+    passwordInputs.forEach(function(input) {
+      if (input.getAttribute('type') === 'password') {
+        input.setAttribute('type', 'text');
+      } else {
+        input.setAttribute('type', 'password');
+      }
+    });
+  } else {
+    console.error('Password field not found.');
+  }
+}
+
+
+// Get all elements with class "password-view"
+var passwordViews = document.querySelectorAll('.password-view');
+
+
+// Adding a "click" event to each element with class "password-view"
+passwordViews.forEach(function(view) {
+  view.addEventListener('click', function() {
+    togglePasswordVisibility();
+  });
+});
+
+            </script>
         </footer>
         <!-- ============footer section styles==========[end] -->
     </body>
