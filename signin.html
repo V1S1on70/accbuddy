@@ -318,7 +318,73 @@
                 </div>
             </div>
 
-            <!-- js code start here -->
+            <script>
+                // The function that is called when the "Sign in" button is pressed
+    function signIn() {
+      var emailInput = document.querySelector('input[name="email"]');
+      var passwordInput = document.querySelector('input[type="password"]');
+
+      var email = emailInput.value;
+      var password = passwordInput.value;
+
+      
+// Checking the presence of entered data
+      if (email.trim() === '') {
+        alert('Please enter your email.');
+        emailInput.focus();
+        return;
+      }
+
+      if (password.trim() === '') {
+        alert('Please enter your password.');
+        passwordInput.focus();
+        return;
+      }
+
+     // Execution of logic for authorization
+      // ...
+      // Additional actions to be performed after successful authorization
+      // ...
+
+      
+      // Clear input fields
+      emailInput.value = '';
+      passwordInput.value = '';
+    }
+
+   
+    // The function that is called when the "Reset password" button is pressed
+    function resetPassword() {
+      var emailInput = document.querySelector('input[name="email"]');
+
+      var email = emailInput.value;
+
+      
+      // Checking the presence of the entered email
+      if (email.trim() === '') {
+        alert('Please enter your email.');
+        emailInput.focus();
+        return;
+      }
+
+     // Execute the logic to reset the password
+      // ...
+      // Additional actions to take after a successful password reset
+      // ...
+
+      // Clear the input field
+      emailInput.value = '';
+    }
+
+    
+    // Setting up event handlers for buttons
+    var signInButton = document.querySelector('.ab-submite-btn');
+    var resetPasswordButton = document.querySelector('.ab-reset-password-btn');
+
+    signInButton.addEventListener('click', signIn);
+    resetPasswordButton.addEventListener('click', resetPassword);
+
+            </script>
         </footer>
         <!-- ============footer section styles==========[end] -->
     </body>
